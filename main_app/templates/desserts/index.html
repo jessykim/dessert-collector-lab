@@ -22,23 +22,25 @@
 <section class="card-container">
   {% for dessert in desserts %}
     <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            src="{% static 'images/' %}" 
-            alt=""
-          >
+      <a href="/desserts/{{ dessert.id }}">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img 
+              src="{% static 'images/' %}" 
+              alt=""
+            >
+          </div>
+          <h2 class="card-title">{{ dessert.name }}</h2>
+          <p>{{ dessert.category }}</p>
+          <p>{{ dessert.description }}</p>
+          {% comment %} {% if cat.age > 0 %}
+            <p>A {{ cat.age }} year old {{ cat.breed }}</p>
+          {% else %}
+            <p>A {{ cat.breed }} kitten.</p>
+          {% endif %}
+          <p><small>{{ cat.description }}</small></p> {% endcomment %}
         </div>
-        <h2 class="card-title">{{ dessert.name }}</h2>
-        <p>{{ dessert.category }}</p>
-        <p>{{ dessert.description }}</p>
-        {% comment %} {% if cat.age > 0 %}
-          <p>A {{ cat.age }} year old {{ cat.breed }}</p>
-        {% else %}
-          <p>A {{ cat.breed }} kitten.</p>
-        {% endif %}
-        <p><small>{{ cat.description }}</small></p> {% endcomment %}
-      </div>
+      </a>
     </div>
   {% endfor %}
 </section>

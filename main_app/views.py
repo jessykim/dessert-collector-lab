@@ -26,3 +26,7 @@ def about(request):
 def desserts_index(request):
   desserts = Dessert.objects.all()
   return render(request, 'desserts/index.html', { 'desserts': desserts })
+
+def desserts_detail(request, dessert_id):
+  dessert = Dessert.objects.get(id=dessert_id)
+  return render(request, 'desserts/detail.html', { 'dessert': dessert })
