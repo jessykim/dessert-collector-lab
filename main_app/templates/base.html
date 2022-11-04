@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +9,10 @@
   <link
     rel="shortcut icon"
     type="image/png"
-    href=""
+    href="{% static 'images/icons8-dessert-91.png' %}"
   >
   <title>Dessert Collector</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   {% block head %}
   {% endblock %}
 </head>
@@ -18,10 +21,12 @@
     <div class="header-logo-container">
       <a href="/">
         <img 
-          src=""
-          alt="The Cat Collector Logo"
+          src="{% static 'images/icons8-dessert-91.png' %}"
+          alt="The Dessert Collector Logo"
+          id="header-logo"
         >
       </a>
+      <h1>DESSERT COLLECTOR</h1>
     </div>
     <nav>
       <ul>
