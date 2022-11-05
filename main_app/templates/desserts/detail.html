@@ -21,13 +21,20 @@
   <div class="dessert-details">
     <h1>{{ dessert.name }}</h1>
     <h2>{{ dessert.category }}</h2>
-    <h2>{{ dessert.description }}</h2>
     {% comment %} {% if cat.age > 0 %}
       <h2>A {{ cat.age }} year old {{ cat.breed }}</h2>
     {% else %}
       <h2>A {{ cat.breed }} kitten.</h2>
     {% endif %}
     <p>{{ cat.description }}</p> {% endcomment %}
+  </div>
+  <p>{{ dessert.description }}</p>
+    {% comment %} New markup {% endcomment %}
+    <div class="dessert-actions">
+      <a href="{% url 'desserts_update' dessert.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'desserts_delete' dessert.id %}" class="btn danger">Delete</a>
+    </div>
+    {% comment %} New markup above {% endcomment %}
   </div>
 </section>
 
