@@ -30,8 +30,9 @@
     </div>
     <nav>
       <ul>
-        <li><a href="/desserts">All Desserts</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="{% url 'desserts_index' %}">All Desserts</a></li>
+        <li><a href="{% url 'desserts_create' %}">Add a Dessert</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
       </ul>
     </nav>
   </header>

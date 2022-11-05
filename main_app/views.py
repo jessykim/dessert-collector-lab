@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Dessert
 
 # class Dessert:
@@ -30,3 +31,7 @@ def desserts_index(request):
 def desserts_detail(request, dessert_id):
   dessert = Dessert.objects.get(id=dessert_id)
   return render(request, 'desserts/detail.html', { 'dessert': dessert })
+
+class DessertCreate(CreateView):
+  model = Dessert
+  fields = '__all__'
