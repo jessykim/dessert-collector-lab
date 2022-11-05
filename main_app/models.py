@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Dessert(models.Model):
@@ -8,3 +9,7 @@ class Dessert(models.Model):
 
   def __str__(self):
     return self.name
+
+  def get_absolute_url(self):
+      return reverse('desserts_detail', kwargs={'dessert_id': self.id})
+  
