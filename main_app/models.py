@@ -39,4 +39,4 @@ class Recipe(models.Model):
   dessert = models.ForeignKey(Dessert, on_delete=models.CASCADE)
 
   def __str__(self):
-    return self.name
+    return f"{self.get_restrictions_display()}"

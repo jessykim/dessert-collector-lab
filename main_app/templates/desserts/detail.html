@@ -38,4 +38,39 @@
   </div>
 </section>
 
+<div class="recipe-container">
+  <section class="recipes">
+    <div class="subsection-title">
+      <h2>Recipes</h2>
+      {% comment %} <img 
+        src="{% static 'images/cat-cone.svg' %}" 
+        alt="An ice cream cone cat"
+      />
+      <img 
+        src="{% static 'images/cat-onigiri.svg' %}"
+        alt="A cat as onigiri"
+      />
+      <img 
+        src="{% static 'images/kitty-kabob.svg' %}" 
+        alt="A kabob of kittens"
+      /> {% endcomment %}
+    </div>
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Dietary Restrictions</th><th>Recipe Link</th></tr>
+      </thead>
+      <tbody>
+        {% for recipe in dessert.recipe_set.all %}
+          <tr>
+            <td>{{recipe.name}}</td>
+            <td>{{recipe.get_restrictions_display}}</td>
+            <td><a href="{{recipe.url}}" target="_blank">Click Here!</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
+
+
 {% endblock %}
