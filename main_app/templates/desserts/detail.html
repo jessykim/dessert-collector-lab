@@ -55,6 +55,16 @@
         alt="A kabob of kittens"
       /> {% endcomment %}
     </div>
+    <h3>Add a Recipe</h3>
+    <form
+      method="post" 
+      class="subsection-content"
+    >
+      {% csrf_token %}
+      {{ recipe_form.as_p }}
+      <button type="submit" class="btn submit">Add Recipe</button>
+    </form>
+    <h3>List of Recipes</h3>
     <table>
       <thead>
         <tr><th>Name</th><th>Dietary Restrictions</th><th>Recipe Link</th></tr>

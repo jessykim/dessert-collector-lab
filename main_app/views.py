@@ -16,7 +16,7 @@ def desserts_index(request):
 
 def desserts_detail(request, dessert_id):
   dessert = Dessert.objects.get(id=dessert_id)
-  recipe_form: RecipeForm()
+  recipe_form = RecipeForm()
   return render(request, 'desserts/detail.html', {
     'dessert': dessert, 
     'recipe_form': recipe_form 
