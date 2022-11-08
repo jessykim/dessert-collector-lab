@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+import django.views.generic import ListView, DetailView
 from .models import Dessert, Spot
 from .forms import RecipeForm
 
@@ -45,3 +46,9 @@ def add_recipe(request, dessert_id):
 class SpotCreate(CreateView):
   model = Spot
   fields = '__all__'
+
+class SpotList(ListView):
+  model = Spot
+
+class SpotDetail(DetailView):
+  model = Spot
