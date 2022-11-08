@@ -11,6 +11,58 @@ RESTRICTIONS = (
   ('V', 'Vegan')
 )
 
+STATE = [
+	('AL', 'Alabama'),
+	('AK', 'Alaska'),
+	('AZ', 'Arizona'),
+	('AR', 'Arkansas'),
+	('CA', 'California'),
+	('CO', 'Colorado'),
+	('CT', 'Connecticut'),
+	('DC', 'Washington D.C.'),
+	('DE', 'Delaware'),
+	('FL', 'Florida'),
+	('GA', 'Georgia'),
+	('HI', 'Hawaii'),
+	('ID', 'Idaho'),
+	('IL', 'Illinois'),
+	('IN', 'Indiana'),
+	('IA', 'Iowa'),
+	('KS', 'Kansas'),
+	('LA', 'Louisiana'),
+	('ME', 'Maine'),
+	('MD', 'Maryland'),
+	('MA', 'Massachusetts'),
+	('MI', 'Michigan'),
+	('MN', 'Minnesota'),
+	('MS', 'Mississippi'),
+	('MO', 'Missouri'),
+	('MT', 'Montana'),
+	('NE', 'Nebraska'),
+	('NV', 'Nevada'),
+	('NH', 'New Hampshire'),
+	('NJ', 'New Jersey'),
+	('NM', 'New Mexico'),
+	('NY', 'New York'),
+	('NC', 'North Carolina'),
+	('ND', 'North Dakota'),
+	('OH', 'Ohio'),
+	('OK', 'Oklahoma'),
+	('OR', 'Oregon'),
+	('PA', 'Pennsylvania'),
+	('RI', 'Rhode Island'),
+	('SC', 'South Carolina'),
+	('SD', 'South Dakota'),
+	('TN', 'Tennessee'),
+	('TX', 'Texas'),
+	('UT', 'Utah'),
+	('VT', 'Vermont'),
+	('VA', 'Virginia'),
+	('WA', 'Washington'),
+	('WI', 'Wisconsin'),
+	('WY', 'Wyoming')
+]
+
 # Create your models here.
 class Dessert(models.Model):
   name = models.CharField(max_length=100)
@@ -40,3 +92,20 @@ class Recipe(models.Model):
 
   def __str__(self):
     return f"{self.get_restrictions_display()}"
+
+class Spot(models.Model):
+  name = models.CharField(max_length=50)
+  address = models.CharField(max_length=20)
+  city = models.CharField(max_length=20)
+  state = models.CharField(
+    max_length=2,
+    choices=STATE,
+    default=STATE[0][0]
+  )
+  zipcode = models.IntegerField('Zip')
+
+  def __str__(self):
+    return self.name
+  
+  def get_absolute_url(self):
+    return reverse('spots_detail', kwargs={'pk': self.id})
