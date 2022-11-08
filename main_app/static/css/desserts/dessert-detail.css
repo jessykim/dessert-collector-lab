@@ -24,12 +24,12 @@
   margin-top: 20px;
 }
 
-/* .feedings-toy-container {
+.recipe-container {
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
   align-items: center;
-} */
+}
 
 .subsection-title {
   display: flex;
@@ -94,7 +94,7 @@
   margin: 5px 0;
 }
 
-/* .feedings-toy-container > section {
+.recipe-container > section {
   width: 80%;
   min-width: 360px;
   border: var(--borders);
@@ -105,9 +105,9 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 20px;
-} */
+}
 
-/* .subsection-title img {
+.subsection-title img {
   height: 42px;
   margin-left: 8px;
 }
@@ -116,13 +116,13 @@
   margin-left: 16px;
 }
 
-.feedings h2,
+.recipes h2,
 .toys h2 {
   font-size: 3.2rem;
   margin: 0;
 }
 
-.feedings h3,
+.recipes h3,
 .toys h3 {
   font-size: var(--font-xl);
   margin: 10px 0;
@@ -140,25 +140,25 @@
   padding: 3px;
 }
 
-.feedings table {
+.recipes table {
   width: calc(100% - 16px);
   text-align: left;
   border-collapse: collapse;
   margin: 0 8px;
 }
 
-.feedings td {
+.recipes td {
   padding: 8px 5px;
   font-size: var(--font-reg);
 }
 
-.feedings th {
+.recipes th {
   font-size: var(--font-l);
   padding: 5px 5px 0;
   border-bottom: rgb(36, 116, 248) solid 2px;
 }
 
-.feedings tr:nth-child(even) {
+.recipes tr:nth-child(even) {
   background-color: #f3f3fd;
 }
 
@@ -188,32 +188,32 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .cat-container {
+  .dessert-container {
     padding: 35px 30px;
     flex-direction: row;
     align-items: center;
     justify-content: start;
   }
 
-  .cat-img {
+  .dessert-img {
     width: 25%;
     max-width: 250px;
     margin-right: 25px;
   }
 
-  .feedings-toy-container {
+  .recipe-container {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
   }
 
-  .feedings-toy-container > section {
+  .recipe-container > section {
     width: 45%;
   }
-} */
+}
 
-/* @media only screen and (min-width: 1024px) {
-  .feedings-toy-container {
+@media only screen and (min-width: 1024px) {
+  .recipe-container {
     padding: 0 40px;
   }
-} */
+}
