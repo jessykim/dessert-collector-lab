@@ -52,3 +52,11 @@ class SpotList(ListView):
 
 class SpotDetail(DetailView):
   model = Spot
+
+class SpotUpdate(UpdateView):
+  model = Spot
+  fields = '__all__'
+
+class SpotDelete(DeleteView):
+  model = Spot
+  success_url = '/spots/'
