@@ -17,10 +17,12 @@ def desserts_index(request):
 
 def desserts_detail(request, dessert_id):
   dessert = Dessert.objects.get(id=dessert_id)
+  spots_dessert_doesnt_list = Spot.objects.exclude(id__in = dessert.spots.all().values_list('id'))
   recipe_form = RecipeForm()
   return render(request, 'desserts/detail.html', {
     'dessert': dessert, 
-    'recipe_form': recipe_form 
+    'recipe_form': recipe_form,
+    'spots': spots_dessert_doesnt_list 
   })
 
 class DessertCreate(CreateView):

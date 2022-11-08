@@ -106,10 +106,29 @@
     </div>
     <h3>List of Sweet Spots</h3>
     <div class="subsection-content">
-      {% comment %} We'll display available toys here {% endcomment %}
+      {% if spots.count %}
+        {% for spot in spots.all %}
+          <div class="spot-container">
+            {% comment %} <div 
+              class="color-block"
+              style="background-color: {{ toy.color }}"
+            ></div> {% endcomment %}
+            <a href="{% url 'spots_detail' spot.id %}">
+              <p>{{ spot.name }}</p>
+            </a>
+            <form action="" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn submit">Add Spot</button>
+            </form>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="all-spots">
+          {{dessert.name}} can be found in all locations listed!
+        </p>
+      {% endif %}
     </div>
   </section>
 </div>
-
 
 {% endblock %}
