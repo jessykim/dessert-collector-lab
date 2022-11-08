@@ -64,16 +64,35 @@ STATE = [
 ]
 
 # Create your models here.
+
+class Spot(models.Model):
+  name = models.CharField(max_length=50)
+  address = models.CharField(max_length=20)
+  city = models.CharField(max_length=20)
+  state = models.CharField(
+    max_length=2,
+    choices=STATE,
+    default=STATE[0][0]
+  )
+  zipcode = models.IntegerField('Zip')
+
+  def __str__(self):
+    return self.name
+  
+  def get_absolute_url(self):
+    return reverse('spots_detail', kwargs={'pk': self.id})
+
 class Dessert(models.Model):
   name = models.CharField(max_length=100)
   category = models.CharField(max_length=100)
   description = models.TextField(max_length=250)
+  spots = models.ManyToManyField(Spot)
 
   def __str__(self):
     return self.name
 
   def get_absolute_url(self):
-      return reverse('desserts_detail', kwargs={'dessert_id': self.id})
+    return reverse('desserts_detail', kwargs={'dessert_id': self.id})
 
 class Recipe(models.Model):
   name = models.CharField(max_length=50)
@@ -92,20 +111,3 @@ class Recipe(models.Model):
 
   def __str__(self):
     return f"{self.get_restrictions_display()}"
-
-class Spot(models.Model):
-  name = models.CharField(max_length=50)
-  address = models.CharField(max_length=20)
-  city = models.CharField(max_length=20)
-  state = models.CharField(
-    max_length=2,
-    choices=STATE,
-    default=STATE[0][0]
-  )
-  zipcode = models.IntegerField('Zip')
-
-  def __str__(self):
-    return self.name
-  
-  def get_absolute_url(self):
-    return reverse('spots_detail', kwargs={'pk': self.id})

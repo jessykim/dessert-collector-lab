@@ -25,7 +25,7 @@ def desserts_detail(request, dessert_id):
 
 class DessertCreate(CreateView):
   model = Dessert
-  fields = '__all__'
+  fields = ['name', 'category', 'description']
 
 class DessertUpdate(UpdateView):
   model = Dessert
