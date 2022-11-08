@@ -15,7 +15,7 @@ def about(request):
   return render(request, 'about.html')
 
 def desserts_index(request):
-  desserts = Dessert.objects.all()
+  desserts = Dessert.objects.filter(user=request.user)
   return render(request, 'desserts/index.html', { 'desserts': desserts })
 
 def desserts_detail(request, dessert_id):
