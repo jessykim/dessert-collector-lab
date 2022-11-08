@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-import django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView
 from .models import Dessert, Spot
 from .forms import RecipeForm
 
