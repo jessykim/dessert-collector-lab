@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Dessert
+from .models import Dessert, Spot
 from .forms import RecipeForm
 
 # Create your views here.
@@ -41,3 +41,7 @@ def add_recipe(request, dessert_id):
     new_recipe.dessert_id = dessert_id
     new_recipe.save()
   return redirect('desserts_detail', dessert_id=dessert_id)
+
+class SpotCreate(CreateView):
+  model = Spot
+  fields = '__all__'
