@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 RESTRICTIONS = (
   ('N', 'None'),
@@ -87,6 +88,7 @@ class Dessert(models.Model):
   category = models.CharField(max_length=100)
   description = models.TextField(max_length=250)
   spots = models.ManyToManyField(Spot)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
     return self.name
