@@ -57,6 +57,7 @@
     </div>
     <h3>Add a Recipe</h3>
     <form
+      action="{% url 'add_recipe' dessert.id %}"
       method="post" 
       class="subsection-content"
     >
@@ -65,20 +66,26 @@
       <button type="submit" class="btn submit">Add Recipe</button>
     </form>
     <h3>List of Recipes</h3>
-    <table>
-      <thead>
-        <tr><th>Name</th><th>Dietary Restrictions</th><th>Recipe Link</th></tr>
-      </thead>
-      <tbody>
-        {% for recipe in dessert.recipe_set.all %}
-          <tr>
-            <td>{{recipe.name}}</td>
-            <td>{{recipe.get_restrictions_display}}</td>
-            <td><a href="{{recipe.url}}" target="_blank">Click Here!</a></td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    {% if dessert.recipe_set.all.count %}
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Dietary Restrictions</th><th>Recipe Link</th></tr>
+        </thead>
+        <tbody>
+          {% for recipe in dessert.recipe_set.all %}
+            <tr>
+              <td>{{recipe.name}}</td>
+              <td>{{recipe.get_restrictions_display}}</td>
+              <td><a href="{{recipe.url}}" target="_blank">Click Here!</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <div class="subsection-content">
+        <p>No recipes have been added for {{dessert.name}}!</p>
+      </div>
+    {% endif %}
   </section>
 </div>
 

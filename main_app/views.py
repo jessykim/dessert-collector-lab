@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Dessert
 from .forms import RecipeForm
@@ -33,3 +33,11 @@ class DessertUpdate(UpdateView):
 class DessertDelete(DeleteView):
   model = Dessert
   success_url = '/desserts/'
+
+def add_recipe(request, dessert_id):
+  form = RecipeForm(request.POST)
+  if form.is_valid():
+    new_recipe = form.save(commit=False)
+    new_recipe.dessert_id = dessert_id
+    new_recipe.save()
+  return redirect('desserts_detail', dessert_id=dessert_id)
