@@ -180,16 +180,18 @@ nav li {
   width: 80%;
 }
 
-.header-logo-container img {
-  padding: 0 15px;
+.header-logo-container a {
+  /* padding: 0 0 0 15px; */
   justify-self: center;
-  width: 100%;
-  
 }
 
 .header-logo-container h1 {
   padding: 0px 15px;
   width: 50%;
+}
+
+#header-logo {
+  height: 25px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -275,7 +277,7 @@ nav li {
   }
 
   .header-logo-container {
-    width: 256px;
+    width: 220px;
     height: 35px;
   }
 
@@ -286,8 +288,8 @@ nav li {
   }
 
   .header-logo-container h1 {
-    font-size: 14px;
-    width: 90%;
+    font-size: 20px;
+    width: 80%;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
