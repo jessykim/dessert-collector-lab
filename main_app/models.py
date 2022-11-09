@@ -64,6 +64,14 @@ STATE = [
 	('WY', 'Wyoming')
 ]
 
+CATEGORY = (
+  ('B', 'Baked'),
+	('D', 'Drink'),
+  ('F', 'Frozen'),
+  ('N', 'No-Bake'),
+  ('O', 'Other')
+)
+
 # Create your models here.
 
 class Spot(models.Model):
@@ -85,7 +93,11 @@ class Spot(models.Model):
 
 class Dessert(models.Model):
   name = models.CharField(max_length=100)
-  category = models.CharField(max_length=100)
+  category = models.CharField(
+		max_length=1,
+		choices=CATEGORY,
+		default=CATEGORY[0][0]
+	)
   description = models.TextField(max_length=250)
   spots = models.ManyToManyField(Spot)
   user = models.ForeignKey(User, on_delete=models.CASCADE)

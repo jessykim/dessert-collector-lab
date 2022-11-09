@@ -13,10 +13,6 @@
 
 <section class="page-header">
   <h1>Dessert List</h1>
-  <img src="{% static 'images/' %}" alt="" />
-  <img src="{% static 'images/' %}" alt="" />
-  <img src="{% static 'images/' %}" alt="" />
-  <img src="{% static 'images/' %}" alt="" />
 </section>
 
 <section class="card-container">
@@ -25,20 +21,37 @@
       <a href="{% url 'desserts_detail' dessert.id %}">
         <div class="card-content">
           <div class="card-img-container">
-            <img 
-              src="{% static 'images/' %}" 
-              alt=""
-            >
+            {% if dessert.category == 'B' %}
+              <img 
+                src="{% static 'images/muffin-svgrepo-com.svg' %}" 
+                alt="muffin"
+              >
+              {% elif dessert.category == 'D' %}
+              <img 
+                src="{% static 'images/milkshake-svgrepo-com.svg' %}" 
+                alt="milkshake"
+              >
+              {% elif dessert.category == 'F' %}
+              <img 
+                src="{% static 'images/icecream-svgrepo-com.svg' %}" 
+                alt="ice cream"
+              >
+              {% elif dessert.category == 'N' %}
+              <img 
+                src="{% static 'images/jelly-svgrepo-com.svg' %}" 
+                alt="jello"
+              >
+              {% else %}
+              <img 
+                src="{% static 'images/pancakes-svgrepo-com.svg' %}" 
+                alt="pancakes"
+              >
+            {% endif %}
           </div>
-          <h2 class="card-title">{{ dessert.name }}</h2>
-          <p>{{ dessert.category }}</p>
-          <p>{{ dessert.description }}</p>
-          {% comment %} {% if cat.age > 0 %}
-            <p>A {{ cat.age }} year old {{ cat.breed }}</p>
-          {% else %}
-            <p>A {{ cat.breed }} kitten.</p>
-          {% endif %}
-          <p><small>{{ cat.description }}</small></p> {% endcomment %}
+          <div class="card-text-container">
+            <h2 class="card-title">{{ dessert.name }}</h2>
+            <p>{{ dessert.get_category_display }}</p>
+          </div>
         </div>
       </a>
     </div>
