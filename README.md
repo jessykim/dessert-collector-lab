@@ -13,13 +13,10 @@ As a lover of desserts, with an interest in baking, I chose to build this applic
 
 ## Screenshots of the App 📸
 ![Sweet Tooth Logo](./main_app/static/images/logo.png)
-<!-- ![Run Info](./public/images/run2.png)<br />
-![Home Page Mobile](./public/images/homepagemobile.PNG)
-![Create a Run](./public/images/createrun.PNG)
-![Scheduled Run and Players](./public/images/run.PNG)
-![All Runs](./public/images/allruns.PNG)
-![User Profile](./public/images/userprofile.PNG)
-![User Game Stats](./public/images/gamestats.PNG) -->
+![Dessert Index Page](./main_app/static/images/dessert-list.png)
+![Dessert Details Page](./main_app/static/images/dessert-details1.png)
+![Dessert Recipes and Sweet Spots](./main_app/static/images/dessert-details2.png)
+![Sweet Spots Index Page](./main_app/static/images/spots.png)
 
 ## Technology Used
   - CSS
