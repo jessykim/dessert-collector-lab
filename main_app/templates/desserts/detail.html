@@ -13,14 +13,36 @@
 
 <section class="dessert-container">
   <div class="dessert-img">
+    {% if dessert.category == 'B' %}
     <img 
-      src="{% static 'images/' %}" 
-      alt=""
+      src="{% static 'images/muffin-svgrepo-com.svg' %}" 
+      alt="muffin"
     >
+    {% elif dessert.category == 'D' %}
+    <img 
+      src="{% static 'images/milkshake-svgrepo-com.svg' %}" 
+      alt="milkshake"
+    >
+    {% elif dessert.category == 'F' %}
+    <img 
+      src="{% static 'images/icecream-svgrepo-com.svg' %}" 
+      alt="ice cream"
+    >
+    {% elif dessert.category == 'N' %}
+    <img 
+      src="{% static 'images/jelly-svgrepo-com.svg' %}" 
+      alt="jello"
+    >
+    {% else %}
+    <img 
+      src="{% static 'images/pancakes-svgrepo-com.svg' %}" 
+      alt="pancakes"
+    >
+    {% endif %}
   </div>
   <div class="dessert-details">
     <h1>{{ dessert.name }}</h1>
-    <h2>{{ dessert.category }}</h2>
+    <h2>{{ dessert.get_category_display }}</h2>
     <p>{{ dessert.description }}</p>
     <div class="dessert-actions">
       <a href="{% url 'desserts_update' dessert.id %}" class="btn warn">Edit</a>
@@ -29,22 +51,14 @@
   </div>
 </section>
 
-<div class="recipe-container">
+<div class="bottom-container">
   <section class="recipes">
     <div class="subsection-title">
+      <img 
+      src="{% static 'images/whisk-cooking-utensil-dishware-svgrepo-com.svg' %}" 
+      alt="whisk"
+      >
       <h2>Recipes</h2>
-      {% comment %} <img 
-        src="{% static 'images/cat-cone.svg' %}" 
-        alt="An ice cream cone cat"
-      />
-      <img 
-        src="{% static 'images/cat-onigiri.svg' %}"
-        alt="A cat as onigiri"
-      />
-      <img 
-        src="{% static 'images/kitty-kabob.svg' %}" 
-        alt="A kabob of kittens"
-      /> {% endcomment %}
     </div>
     <h3>Add a Recipe</h3>
     <form
@@ -60,14 +74,14 @@
     {% if dessert.recipe_set.all.count %}
       <table>
         <thead>
-          <tr><th>Name</th><th>Dietary Restrictions</th><th>Recipe Link</th></tr>
+          <tr><th>Name</th><th>Restrictions</th><th>Recipe</th></tr>
         </thead>
         <tbody>
           {% for recipe in dessert.recipe_set.all %}
             <tr>
               <td>{{recipe.name}}</td>
               <td>{{recipe.get_restrictions_display}}</td>
-              <td><a href="{{recipe.url}}" target="_blank">Click Here!</a></td>
+              <td><a href="{{recipe.url}}" target="_blank">Link</a></td>
             </tr>
           {% endfor %}
         </tbody>
@@ -81,20 +95,17 @@
 
   <section class="spots">
     <div class="subsection-title">
+      <img 
+      src="{% static 'images/location-svgrepo-com.svg' %}" 
+      alt="location pin"
+      >
       <h2>Sweet Spots</h2>
-      {% comment %} <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
-      <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
-      <img src="{% static 'images/fish.svg' %}" alt="A fishy toy" /> {% endcomment %}
     </div>
-    <h3>Find your next {{ dessert.name }} at these Sweet Spots!</h3>
+    <h3>Find your next {{ dessert.name }} in the following locations!</h3>
     <div class="subsection-content">
       {% if dessert.spots.count %}
         {% for spot in dessert.spots.all %}
           <div class="spot-container">
-            {% comment %} <div 
-              class="color-block"
-              style="background-color: {{ toy.color }}"
-            ></div> {% endcomment %}
             <a href="{% url 'spots_detail' spot.id %}">
               <p>{{ spot.name }}</p>
             </a>
@@ -109,17 +120,13 @@
       {% if spots.count %}
         {% for spot in spots.all %}
           <div class="spot-container">
-            {% comment %} <div 
-              class="color-block"
-              style="background-color: {{ toy.color }}"
-            ></div> {% endcomment %}
-            <a href="{% url 'spots_detail' spot.id %}">
-              <p>{{ spot.name }}</p>
-            </a>
             <form action="{% url 'assoc_spot' dessert.id spot.id %}" method="post">
               {% csrf_token %}
               <button type="submit" class="btn submit">+</button>
             </form>
+            <a href="{% url 'spots_detail' spot.id %}">
+              <p>{{ spot.name }}</p>
+            </a>
           </div>
         {% endfor %}
       {% else %}

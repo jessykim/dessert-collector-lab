@@ -22,30 +22,30 @@
         <div class="card-content">
           <div class="card-img-container">
             {% if dessert.category == 'B' %}
-              <img 
-                src="{% static 'images/muffin-svgrepo-com.svg' %}" 
-                alt="muffin"
-              >
-              {% elif dessert.category == 'D' %}
-              <img 
-                src="{% static 'images/milkshake-svgrepo-com.svg' %}" 
-                alt="milkshake"
-              >
-              {% elif dessert.category == 'F' %}
-              <img 
-                src="{% static 'images/icecream-svgrepo-com.svg' %}" 
-                alt="ice cream"
-              >
-              {% elif dessert.category == 'N' %}
-              <img 
-                src="{% static 'images/jelly-svgrepo-com.svg' %}" 
-                alt="jello"
-              >
-              {% else %}
-              <img 
-                src="{% static 'images/pancakes-svgrepo-com.svg' %}" 
-                alt="pancakes"
-              >
+            <img 
+              src="{% static 'images/muffin-svgrepo-com.svg' %}" 
+              alt="muffin"
+            >
+            {% elif dessert.category == 'D' %}
+            <img 
+              src="{% static 'images/milkshake-svgrepo-com.svg' %}" 
+              alt="milkshake"
+            >
+            {% elif dessert.category == 'F' %}
+            <img 
+              src="{% static 'images/icecream-svgrepo-com.svg' %}" 
+              alt="ice cream"
+            >
+            {% elif dessert.category == 'N' %}
+            <img 
+              src="{% static 'images/jelly-svgrepo-com.svg' %}" 
+              alt="jello"
+            >
+            {% else %}
+            <img 
+              src="{% static 'images/pancakes-svgrepo-com.svg' %}" 
+              alt="pancakes"
+            >
             {% endif %}
           </div>
           <div class="card-text-container">
