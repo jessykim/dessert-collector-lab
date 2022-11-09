@@ -106,6 +106,10 @@
       {% if dessert.spots.count %}
         {% for spot in dessert.spots.all %}
           <div class="spot-container">
+            <form action="{% url 'remove_spot' dessert.id spot.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn danger">-</button>
+            </form>
             <a href="{% url 'spots_detail' spot.id %}">
               <p>{{ spot.name }}</p>
             </a>

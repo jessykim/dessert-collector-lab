@@ -80,6 +80,11 @@ def assoc_spot(request, dessert_id, spot_id):
   Dessert.objects.get(id=dessert_id).spots.add(spot_id)
   return redirect('desserts_detail', dessert_id=dessert_id)
 
+@login_required
+def remove_spot(request, dessert_id, spot_id):
+  Dessert.objects.get(id=dessert_id).spots.remove(spot_id)
+  return redirect('desserts_detail', dessert_id=dessert_id)
+
 def signup(request):
   error_message = ''
   if request.method == 'POST':
