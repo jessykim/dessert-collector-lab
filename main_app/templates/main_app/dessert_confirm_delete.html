@@ -4,10 +4,10 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Delete Dessert?</h1>
-  {% comment %} <img src="{% static 'images/nerd-cat.svg' %}" alt="A cat using a computer"/> {% endcomment %}
+  <img src="{% static 'images/delete-svgrepo-com.svg' %}" alt="delete icon">
+  <h1>Delete Dessert</h1>
 </div>
-<h2>Are you sure you want to delete {{ dessert.name }}?</h2>
+<h3>Are you sure you want to delete {{ dessert.name }}?</h3>
 
 <form action="" method="POST" class="form">
   {% csrf_token %}
