@@ -26,10 +26,6 @@
   width: 100%;
 }
 
-.card-text-container {
-  justify-items: flex-end;
-}
-
 .card > a {
   text-decoration: none;
   color: var(--text-color);
@@ -37,7 +33,7 @@
 
 .card h2 {
   margin: 10px 0;
-  font-size: var(--font-xl);
+  font-size: var(--font-l);
 }
 
 .card p {
