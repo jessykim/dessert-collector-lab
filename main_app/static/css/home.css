@@ -46,6 +46,7 @@ main > section {
   justify-content: center;
   align-items: center;
   width: 80%;
+  background-color: #ffffff76;
 }
 
 .login h1 {

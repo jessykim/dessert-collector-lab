@@ -12,6 +12,7 @@ main {
   margin-bottom: 20px;
   border: solid 1px;
   box-shadow: var(--card-box-shadow);
+  background-color: #ffffff76;
 }
 
 .card-content {

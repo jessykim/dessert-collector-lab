@@ -12,6 +12,7 @@
   border: solid 1px;
   box-shadow: var(--card-box-shadow);
   position: relative;
+  background-color: #ffffff76;
 }
 
 .card-content {
