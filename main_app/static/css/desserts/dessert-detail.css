@@ -8,9 +8,6 @@
 
 .dessert-img {
   width: 25%;
-  max-width: 100px;
-  padding: 20px;
-  /* margin-right: 25px; */
   border: 1px solid rgba(118, 114, 114, 0.875);
   border-radius: 50%;
 }
@@ -53,7 +50,6 @@
 
 .dessert-details h1 {
   font-size: var(--font-xxl);
-  /* margin: 15px 0 3px; */
   margin: 0;
 }
 
@@ -194,16 +190,17 @@
     padding: 40px 52px;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
+    width: 100%;
   }
 
-  .dessert-img {
-    width: 25%;
-    max-width: 100px;
-    padding: 20px;
-    /* margin-right: 25px; */
-    border: 1px solid rgba(118, 114, 114, 0.875);
+  .dessert-img > img {
+    width: 100%;
     border-radius: 50%;
+  }
+
+  .dessert-details {
+    padding: 0 40px;
   }
 
   .bottom-container {
