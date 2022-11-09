@@ -12,8 +12,8 @@ Sweet Tooth was built as my final project at General Assembly. The full-stack re
 As a lover of desserts, with an interest in baking, I chose to build this application for those of similar interests who may want to keep track of their favorite dessert places and recipes.
 
 ## Screenshots of the App 📸
-<!-- ![Home Page](./public/images/home%20page.png)
-![Run Info](./public/images/run2.png)<br />
+![Sweet Tooth Logo](./main_app/static/images/logo.png)
+<!-- ![Run Info](./public/images/run2.png)<br />
 ![Home Page Mobile](./public/images/homepagemobile.PNG)
 ![Create a Run](./public/images/createrun.PNG)
 ![Scheduled Run and Players](./public/images/run.PNG)
@@ -31,14 +31,12 @@ As a lover of desserts, with an interest in baking, I chose to build this applic
   - Python
 
 ## Credits
-<!-- - [Bootstrap](https://getbootstrap.com/)
-- [Favicon.io](https://favicon.io/)
-- [Font Awesome](https://fontawesome.com/) -->
 - [Google Fonts](https://fonts.google.com/)
+- [Hero Patterns](https://heropatterns.com/)
 - [SVG Repo](https://www.svgrepo.com/)
 
 ## Icebox Items 🧊
-  - [ ] Provide the option to remove a 'sweet spot' from a dessert details page
+  - [x] Provide the option to remove a 'sweet spot' from a dessert details page
   - [ ] Create a community among users who may want to view others' favorite desserts/recipes/locations
   - [ ] Allow users to comment and give feedback on 'sweet spot' locations
   - [ ] Provide the option for users to upload their own images when a dessert is added
