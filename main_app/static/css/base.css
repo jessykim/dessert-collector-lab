@@ -29,7 +29,7 @@ body {
   --nav-bg: #f5efe3b6;
   --nav-bg-ff: #f5efe3b6;
   --borders: rgba(187, 183, 183, 0.767) solid 2px;
-  --text-color: rgba(0, 0, 0, 0.848);
+  --text-color: rgba(0, 0, 0, 0.714);
   --link-hover-color: rgb(0, 0, 0);
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: rgb(226, 226, 226);
@@ -65,6 +65,11 @@ ul {
 main {
   width: 100%;
   padding: 0 10px;
+}
+
+h1 {
+  padding-top: 30px;
+  text-align: center;
 }
 
 h2 {
@@ -162,6 +167,17 @@ nav li {
 
 .page-content {
   font-size: var(--font-reg);
+  text-align: center;
+  width: 100%;
+  line-height: 25px;
+  text-align: justify;
+  text-align-last: center;
+  display: flex;
+  justify-content: center;
+}
+
+.page-content > p {
+  width: 80%;
 }
 
 .header-logo-container img {
@@ -195,11 +211,6 @@ nav li {
     margin: 10px 0;
     padding: 0 15px;
   }
-
-  /* visual fix to help align logo */
-  /* .header-logo-container {
-    padding-top: 3px;
-  } */
 
   nav {
     margin-left: auto;
@@ -264,8 +275,6 @@ nav li {
   }
 
   .header-logo-container {
-    /* visual fix to help align logo */
-    /* padding-top: 6px; */
     width: 256px;
     height: 35px;
   }
