@@ -25,6 +25,19 @@ main > section {
 
 .dessert-container {
   width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dessert-container > img {
+  height: 250px;
+}
+
+.dessert-container > h1 {
+  font-size: 50px;
+  text-align: center;
+  margin: 0;
+  padding-top: 20px;
 }
 
 .login {

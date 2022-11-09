@@ -9,12 +9,12 @@
 
 <section class="logo-container">
   <div class="dessert-container">
-    <img src="{% static 'images/cupcake-svgrepo-com.svg' %}" alt="" />
+    <img 
+      src="{% static 'images/cupcake-svgrepo-com.svg' %}" 
+      alt="cupcake"
+    />
+    <h1>Sweet Tooth</h1>
   </div>
-  {% comment %} <img 
-    src="{% static 'images/cupcake-svgrepo-com.svg' %}" 
-    alt="Text reads: Dessert Collector"
-  /> {% endcomment %}
 </section>
 
 {% if not user.is_authenticated %}
