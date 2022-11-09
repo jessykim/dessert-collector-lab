@@ -1,7 +1,6 @@
 # Sweet Tooth
 
-## ☟ LINK BELOW ☟
-## 🧁 [SWEET TOOTH](...) 🧁
+## LINK 👉🏼 🧁 [SWEET TOOTH](...) 🧁
 
 ## Background & Description
 Welcome to **SWEET TOOTH**!<br /> 
