@@ -174,24 +174,13 @@
 .spot-container a:hover {
   cursor: pointer;
   font-weight: 600;
-  color: rgb(222, 174, 87);
+  color: rgb(181, 119, 5);
 }
 
 .spot-container .btn {
   padding: 3px 10px;
   margin-left: 10px;
 }
-
-/* #file-input {
-  overflow: hidden;
-  position: absolute;
-  width: 0.1px;
-  height: 0.1px;
-}
-
-#file-name {
-  margin-bottom: 10px;
-} */
 
 @media only screen and (min-width: 768px) {
   .dessert-container {
