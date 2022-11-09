@@ -9,9 +9,9 @@
   <link
     rel="shortcut icon"
     type="image/png"
-    href="{% static 'images/icons8-dessert-91.png' %}"
+    href="{% static 'images/cupcake-svgrepo-com.svg' %}"
   >
-  <title>Dessert Collector</title>
+  <title>Sweet Tooth</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   {% block head %}
   {% endblock %}
@@ -21,18 +21,18 @@
     <div class="header-logo-container">
       <a href="/">
         <img 
-          src="{% static 'images/icons8-dessert-91.png' %}"
-          alt="The Dessert Collector Logo"
+          src="{% static 'images/cupcake-svgrepo-com.svg' %}"
+          alt="cupcake"
           id="header-logo"
         >
       </a>
-      <h1>DESSERT COLLECTOR</h1>
+      <h1>Sweet Tooth</h1>
     </div>
     <nav>
       <ul>
         {% if user.is_authenticated %}
-          <li><a href="{% url 'desserts_index' %}">All Desserts</a></li>
-          <li><a href="{% url 'spots_index' %}">All Sweet Spots</a></li>
+          <li><a href="{% url 'desserts_index' %}">Desserts</a></li>
+          <li><a href="{% url 'spots_index' %}">Sweet Spots</a></li>
           <li><a href="{% url 'desserts_create' %}">Add a Dessert</a></li>
           <li><a href="{% url 'spots_create' %}">Add a Sweet Spot</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
