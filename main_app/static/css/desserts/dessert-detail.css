@@ -11,9 +11,13 @@
 }
 
 .dessert-img {
-  width: 25%;
-  border: 1px solid rgba(118, 114, 114, 0.875);
+  background-color: white;
+  padding: 20px;
   border-radius: 50%;
+}
+
+.dessert-img img {
+  width: 80px;
 }
 
 .dessert-details {
@@ -198,9 +202,14 @@
     width: 100%;
   }
 
-  .dessert-img > img {
-    width: 100%;
+  .dessert-img {
+    background-color: white;
+    padding: 20px;
     border-radius: 50%;
+  }
+  
+  .dessert-img img {
+    width: 100px;
   }
 
   .dessert-details {
