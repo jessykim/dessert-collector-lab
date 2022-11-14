@@ -1,6 +1,6 @@
 # Sweet Tooth
 
-## LINK 👉🏼 🧁 [SWEET TOOTH](...) 🧁
+## LINK 👉🏼 🧁 [SWEET TOOTH](https://my-sweet-tooth.herokuapp.com/) 🧁
 
 ## Background & Description
 Welcome to **SWEET TOOTH**!<br /> 
