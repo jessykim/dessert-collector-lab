@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import environ
 env = environ.Env()
-# environ.Env.read_env()
+environ.Env.read_env()
 from pathlib import Path
 import os
 # import django_heroku
@@ -35,7 +35,6 @@ ALLOWED_HOSTS = ['my-sweet-tooth.up.railway.app']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'main_app',
     'django.contrib.admin',
@@ -87,7 +86,7 @@ DATABASES = {
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
         'HOST': 'db',
-        'PORT': 5432,
+        'PORT': env('PORT'),
     }
 }
 
@@ -143,4 +142,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 # Other settings above
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
