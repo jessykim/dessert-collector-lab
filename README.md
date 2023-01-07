@@ -1,6 +1,6 @@
 # Sweet Tooth
 
-## LINK 👉🏼 🧁 [SWEET TOOTH](https://sweet-tooth.up.railway.app/) 🧁
+## LINK 👉🏼 🧁 [SWEET TOOTH is currently unavailable] 🧁
 
 ## Background & Description
 Welcome to **SWEET TOOTH**!<br /> 
